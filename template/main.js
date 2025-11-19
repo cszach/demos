@@ -21,15 +21,15 @@ fn vs_main(a: Attributes) -> Varyings {
 
 @fragment
 fn fs_main(v: Varyings) -> @location(0) vec4f {
-  return vec4f(1, 0, 0, 1);
+  return vec4f(v.uv, 0, 1);
 }
 `;
 
 // prettier-ignore
 const vertexBuffer = [
-  0, 0.5, 1, 0,
+     0,  0.5, 1, 0,
   -0.5, -0.5, 0, 1,
-  0.5, -0.5, 1, 1,
+   0.5, -0.5, 1, 1,
 ];
 
 async function setup() {
